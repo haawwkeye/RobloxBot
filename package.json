@@ -1,0 +1,29 @@
+{
+  "name": "robloxbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haawwkeye/RobloxBot.git"
+  },
+  "author": "Hawk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haawwkeye/RobloxBot/issues"
+  },
+  "homepage": "https://github.com/haawwkeye/RobloxBot#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "like-process": "^1.1.2",
+    "noblox.js": "^4.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
+  }
+}
