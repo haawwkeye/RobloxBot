@@ -51,15 +51,16 @@ DEATH.handle(['unhandledRejection', 'exit', 'SIGHUP', 'SIGINT', 'SIGTERM', 'SIGQ
     console.log(`Logged in as ${currentUser.UserName} [${currentUser.UserID}]`);
 
     setInterval(async () => {
+        let hasError = false;
         console.log(`Attempting to follow ${currentUserId}`);
         await noblox.follow(currentUserId).catch((res) => {
+            hasError = true;
             console.error(res);
         }).then((res) => {
-            console.log(res);
-            currentUserId += 1;
+            if (!hasError) currentUserId += 1;
         });
         // currentUserId += 1;
-    }, 5000);
+    }, process.env.retry ?? 15000);
 
     // eslint-disable-next-line no-constant-condition
     while (true) {
